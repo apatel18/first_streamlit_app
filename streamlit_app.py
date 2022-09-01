@@ -19,7 +19,7 @@ streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
 try:
-  fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+  fruit_choice = streamlit.text_input('What fruit would you like information about?')
   if not fruit_choice:
     streamlit.error("Please select a fruit to get information")
   else:
@@ -30,13 +30,6 @@ try:
 
 except URLError as e:
   streamlit.error()
-
-
-
-
-
-# write your own comment -what does the next line do? 
-# write your own comment - what does this do?
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
